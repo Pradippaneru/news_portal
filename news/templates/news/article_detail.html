@@ -1,0 +1,17 @@
+{% extends "news/base.html" %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+    <h1>{{ article.title }}</h1>
+    <p class="text-muted">{{ article.category.name }} | {{ article.publication_date|date:"F d, Y" }}</p>
+     <!-- --- ADD THIS BLOCK TO SHOW THE IMAGE --- -->
+    {% if article.image %}
+        <img src="{{ article.image.url }}" class="img-fluid mb-3" alt="{{ article.title }}">
+    {% endif %}
+    <!-- --------------------------------------- -->
+<hr>
+    <div class="article-content">
+        {{ article.content|linebreaks }}
+    </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "news/base.html" %}
+
+{% block title %}{{ category.name }} - समाचार{% endblock %}
+
+{% block content %}
+    <h1>{{ category.name }} श्रेणीका समाचारहरू</h1>
+    <hr>
+    {% for article in articles %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ article.title }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ article.publication_date|date:"F d, Y" }}</h6>
+                <p class="card-text">{{ article.content|truncatewords:30 }}</p>
+                <a href="{% url 'article_detail' article.id %}" class="card-link">पूरा पढ्नुहोस्</a>
+            </div>
+        </div>
+    {% empty %}
+        <p>यस श्रेणीमा कुनै समाचार उपलब्ध छैन।</p>
+    {% endfor %}
+{% endblock %}
