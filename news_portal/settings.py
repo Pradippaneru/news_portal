@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-wdb4=c85i+3^l@c4*4_c#s)g+egl3%#cqabhn5+y@67fn5@)va
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['news-portal-1-b6lq.onrender.com', '127.0.0.1', 'localhost']
+
 
 
 # Application definition
